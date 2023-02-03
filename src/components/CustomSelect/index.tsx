@@ -3,60 +3,53 @@ import styles from "./styles.module.css";
 import { Option } from "./Option";
 import { Dropdown } from "./Dropdown";
 import { LanguageType } from "../../types/LanguageType";
-import russianFlagIcon from "../../assets/images/flag-russia.svg";
-import britainFlagIcon from "../../assets/images/flag-britain.svg";
-import italianFlagIcon from "../../assets/images/flag-italy.svg";
-import spainFlagIcon from "../../assets/images/flag-spain.svg";
-import polandFlagIcon from "../../assets/images/flag-poland.svg";
-import germanFlagIcon from "../../assets/images/flag-germany.svg";
+import { LANGUAGE, Language } from "../../constants";
 
-const LANGUAGES: LanguageType[] = [
+const defaultLanguages: LanguageType[] = [
   {
     id: "1",
-    name: "Русский",
-    icon: russianFlagIcon,
+    name: Language.russian.name,
+    icon: Language.russian.icon,
     isChecked: true,
   },
   {
     id: "2",
-    name: "Английский",
-    icon: britainFlagIcon,
+    name: Language.english.name,
+    icon: Language.english.icon,
     isChecked: false,
   },
   {
     id: "3",
-    name: "Испанский",
-    icon: spainFlagIcon,
+    name: Language.spain.name,
+    icon: Language.spain.icon,
     isChecked: false,
   },
   {
     id: "4",
-    name: "Немецкий",
-    icon: germanFlagIcon,
+    name: Language.german.name,
+    icon: Language.german.icon,
     isChecked: false,
   },
   {
     id: "5",
-    name: "Итальянский",
-    icon: italianFlagIcon,
+    name: Language.italian.name,
+    icon: Language.italian.icon,
     isChecked: false,
   },
   {
     id: "6",
-    name: "Польский",
-    icon: polandFlagIcon,
+    name: Language.poland.name,
+    icon: Language.poland.icon,
     isChecked: false,
   },
 ];
 
-const LANGUAGE = 'Язык';
-
 function CustomSelect() {
-  const [languages, setLanguages] = useState<LanguageType[]>(LANGUAGES);
+  const [languages, setLanguages] = useState<LanguageType[]>(defaultLanguages);
+  
   const [isOpened, setIsOpened] = useState<boolean>(true);
 
   const selectedLanguages = languages.filter((language) => language.isChecked);
-
 
   const onOptionToggle = (id: string) => {
     setLanguages((languages) => {

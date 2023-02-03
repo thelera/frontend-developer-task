@@ -19,7 +19,7 @@ function DropdownItem({
 
       <p className={styles.dropdownItemTitle}>{item.name}</p>
 
-      <div className={item.isChecked ? styles.dropdownItemChackedCheckbox : styles.dropdownItemCheckbox}></div>
+      <div className={item.isChecked ? styles.dropdownItemCheckedCheckbox : styles.dropdownItemCheckbox}></div>
     </button>
   );
 }

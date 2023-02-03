@@ -31,7 +31,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  background-image: url('../../assets/images/arrow-up.svg');
+  background-image: url("../../assets/images/arrow-up.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -135,7 +135,7 @@
   border-radius: 6px;
 }
 
-.dropdownItemChackedCheckbox {
+.dropdownItemCheckedCheckbox {
   position: relative;
   display: flex;
   align-items: center;
@@ -148,10 +148,48 @@
   border-radius: 6px;
 }
 
-.dropdownItemChackedCheckbox::before {
+.dropdownItemCheckedCheckbox::before {
   position: absolute;
   content: "";
   width: 12px;
   height: 9px;
   background-image: url("../../assets/images/check-icon.svg");
+}
+
+.search {
+  width: 100%;
+  height: 40px;
+  padding: 10px 12px;
+  padding-left: 36px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.searchWrapper {
+  position: relative;
+  margin: 0 16px;
+}
+
+.searchWrapper::before {
+  position: absolute;
+  content: '';
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 40px;
+  background-image: url('../../assets/images/search-icon.svg');
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search::placeholder {
+  color: #c1c1c1;
 }
