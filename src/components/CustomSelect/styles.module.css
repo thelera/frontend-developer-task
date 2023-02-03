@@ -8,7 +8,6 @@
 }
 
 .input {
-  z-index: 10;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -17,6 +16,7 @@
   box-sizing: border-box;
   border: 1px solid #c1c1c1;
   border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .inner {
