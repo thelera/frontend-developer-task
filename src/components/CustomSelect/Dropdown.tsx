@@ -9,19 +9,20 @@ function Dropdown({
   items,
   isOpened,
   onToggle,
-}: 
-{
+}: {
   items: LanguageType[];
   isOpened: boolean;
   onToggle: (id: string) => void;
 }) {
-  const [foundItems, setFoundItems] = useState<string[]>([]);
+  const [foundItems, setFoundItems] = useState<string[] | null>([]);
   const [filteredItems, setFilteredItems] = useState<LanguageType[]>(items);
 
   useEffect(() => {
-    const filteredItems = foundItems.length > 0
-      ? items.filter((item) => foundItems.includes(item.name.toLowerCase()))
-      : items;
+    let filteredItems: LanguageType[] = [];
+
+    if(foundItems) {
+      filteredItems = foundItems.length === 0 ? items : items.filter((item) => foundItems.includes(item.name.toLowerCase()));
+    }
 
     setFilteredItems(filteredItems);
   }, [foundItems, items]);
@@ -31,7 +32,7 @@ function Dropdown({
   );
 
   const onFilterItems = (words: string[]) => {
-    setFoundItems(words);
+    setFoundItems(words.length === 0 ? null : words);
   };
 
   return (
@@ -39,6 +40,7 @@ function Dropdown({
       className={[
         styles.dropdownWrapper,
         isOpened && styles.dropdownHidden,
+        !foundItems && styles.dropdownWithBottomPadding,
       ].join(" ")}
     >
       <Search values={values} onChange={onFilterItems} />
