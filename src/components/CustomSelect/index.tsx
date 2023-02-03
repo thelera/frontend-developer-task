@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useMemo } from "react";
 import styles from "./styles.module.css";
 import { Option } from "./Option";
 import { Dropdown } from "./Dropdown";
@@ -46,10 +46,9 @@ const defaultLanguages: LanguageType[] = [
 
 function CustomSelect() {
   const [languages, setLanguages] = useState<LanguageType[]>(defaultLanguages);
-  
   const [isOpened, setIsOpened] = useState<boolean>(true);
 
-  const selectedLanguages = languages.filter((language) => language.isChecked);
+  const selectedLanguages = useMemo(() => languages.filter((language) => language.isChecked), [languages]);
 
   const onOptionToggle = useCallback((id: string) => {
     setLanguages((languages) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.css";
 import { DropdownItem } from "./DropdownItem";
 import { LanguageType } from "../../types/LanguageType";
@@ -27,9 +27,9 @@ function Dropdown({
     setFilteredItems(filteredItems);
   }, [foundItems, items]);
 
-  const values = Object.values(Language).map((language) =>
+  const values = useMemo(() => Object.values(Language).map((language) =>
     language.name.toLowerCase()
-  );
+  ), []);
 
   const onFilterItems = (words: string[]) => {
     setFoundItems(words.length === 0 ? null : words);
