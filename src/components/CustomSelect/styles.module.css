@@ -1,0 +1,157 @@
+.label {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.input {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  min-height: 46px;
+  box-sizing: border-box;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  padding-bottom: 4px;
+}
+
+.hideDropdownButton {
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../assets/images/arrow-up.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.showDropdownButton {
+  transform: rotate(180deg);
+}
+
+.optionWrapper {
+  display: flex;
+  width: fit-content;
+  height: 24px;
+  padding: 6px 12px;
+  margin-right: 4px;
+  margin-bottom: 6px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+}
+
+.optionWrapper:last-child {
+  margin-left: 0;
+}
+
+.optionName {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #333333;
+}
+
+.optionCloseButton {
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  background-image: url("../../assets/images/close-icon.svg");
+}
+
+.dropdownWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  padding-top: 16px;
+  background: #ffffff;
+  box-shadow: 0px 4px 32px rgba(51, 51, 51, 0.15);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.dropdownItemWrapper {
+  display: flex;
+  padding: 16px;
+  padding-bottom: 12px;
+  margin-top: 1px;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #f4f4f4;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.dropdownHidden {
+  display: none;
+}
+
+.dropdownItemWrapper:last-child {
+  border-bottom: none;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.dropdownItemIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.dropdownItemTitle {
+  margin: 0;
+  padding: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.dropdownItemCheckbox {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border: 2px solid #c1c1c1;
+  border-radius: 6px;
+}
+
+.dropdownItemChackedCheckbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  background: #005ffd;
+  border: 2px solid #0049d9;
+  border-radius: 6px;
+}
+
+.dropdownItemChackedCheckbox::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 9px;
+  background-image: url("../../assets/images/check-icon.svg");
+}
