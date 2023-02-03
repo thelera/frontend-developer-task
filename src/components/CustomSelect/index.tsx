@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import styles from "./styles.module.css";
 import { Option } from "./Option";
 import { Dropdown } from "./Dropdown";
@@ -51,7 +51,7 @@ function CustomSelect() {
 
   const selectedLanguages = languages.filter((language) => language.isChecked);
 
-  const onOptionToggle = (id: string) => {
+  const onOptionToggle = useCallback((id: string) => {
     setLanguages((languages) => {
       const item = languages.find(
         (language) => language.id === id
@@ -63,7 +63,7 @@ function CustomSelect() {
 
       return updatedLanguages;
     });
-  };
+  }, []);
 
   const onDropdownToggle = () => {
     setIsOpened((isOpened) => !isOpened);
